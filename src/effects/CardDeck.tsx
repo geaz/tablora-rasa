@@ -49,8 +49,8 @@ export const useCardDeck = (cards: Array<ArcanaCard>) : [number, () => void, () 
         return card;
     };
 
-    const discardCards = (cards: Array<Card>) => {
-        setDiscardPile([...discardPile, ...cards]);
+    const discardCards = (cards: Array<Card>) => {        
+        setDiscardPile(pre => [...pre, ...cards]);
     }
 
     return [remaining, shuffle, drawCard, discardCards];

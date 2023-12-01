@@ -109,9 +109,9 @@ export const TabloraRasa: FC = () => {
     return (
         <StyledTabloraRasa>
             <div className="button-row">
-                <button disabled={ questionRequest != null } onClick={() => triggerQuestionRequest(QuestionType.YesNo)}><FontAwesomeIcon icon={faQuestion}/>Yes/No Question</button>
-                <button disabled={ questionRequest != null } onClick={() => triggerQuestionRequest(QuestionType.LikelyYes)}><FontAwesomeIcon icon={faQuestion}/>Likely Yes Question</button>
-                <button disabled={ questionRequest != null } onClick={() => triggerQuestionRequest(QuestionType.UnlikelyYes)}><FontAwesomeIcon icon={faQuestion}/>Unlikely Yes Question</button>
+                <button disabled={ questionRequest != null } onClick={() => triggerQuestionRequest(QuestionType.YesNo)}><FontAwesomeIcon icon={faQuestion}/>Yes/No (50%) Question</button>
+                <button disabled={ questionRequest != null } onClick={() => triggerQuestionRequest(QuestionType.LikelyYes)}><FontAwesomeIcon icon={faQuestion}/>Likely Yes (75%) Question</button>
+                <button disabled={ questionRequest != null } onClick={() => triggerQuestionRequest(QuestionType.UnlikelyYes)}><FontAwesomeIcon icon={faQuestion}/>Unlikely Yes (25%) Question</button>
                 <button disabled={ questionRequest != null } onClick={() => triggerQuestionRequest(QuestionType.Open)}><FontAwesomeIcon icon={faBook} />Open Question</button>
                 <button disabled={ questionRequest != null } onClick={() => triggerQuestionRequest(QuestionType.Event)}><FontAwesomeIcon icon={faShuffle} />Random Event</button>
             </div>
