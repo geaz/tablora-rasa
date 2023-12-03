@@ -155,8 +155,6 @@ export const TabloraRasa: FC = () => {
 }
 
 const StyledTabloraRasa = styled.div`
-    margin: 50px 0;
-
     .button-row {
         display: flex;
         justify-content: center;

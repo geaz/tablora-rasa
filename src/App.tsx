@@ -10,8 +10,7 @@ function App() {
             <h3 className="subtitle">A tableless, tarot based oracle for any TTRPG</h3>
             <div id="link-row">
                 <ul>
-                    <li><a href="#" title="Download on Itch.io">itch.io</a></li>
-                    <li><a href="/rules" title="Online Rules">Online Rules</a></li>
+                    <li><a href="/rules" title="Rules">Rules</a></li>
                     <li><a href="#" title="Download Cheat Sheets">Cheat Sheets</a></li>
                 </ul>
             </div>
@@ -34,6 +33,7 @@ const StyledApp = styled.div`
         width: 100%;
         padding: 15px;
         margin-top: 25px;
+        margin-bottom: 50px;
         border-top: 1px solid #eee; 
         border-bottom: 1px solid #eee; 
 
