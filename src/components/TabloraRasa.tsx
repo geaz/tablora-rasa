@@ -6,7 +6,7 @@ import { MinorArcana } from "../model/MinorArcana";
 import { Card, CardOrientation } from "../model/CardDeck";
 import { styled } from "styled-components";
 import { MajorArcana } from "../model/MajorArcana";
-import { checkEvent, checkFlavour, checkLikely, checkYesNo } from "../QuestionChecker";
+import { checkCharacter, checkEvent, checkLikely, checkYesNo } from "../QuestionChecker";
 import CardComponent from "./CardComponent";
 
 enum QuestionType {
@@ -78,7 +78,7 @@ export const TabloraRasa: FC = () => {
                 if(drawnCards.length < 3 && !shouldDrawMinor) setShouldDrawMinor(true);
                 else if(drawnCards.length === 3) setShouldDrawMajor(true);
                 else {
-                    setResult(checkFlavour(drawnCards));
+                    setResult(checkCharacter(drawnCards));
                     if(questionRequest === QuestionType.Event) setTriggeredEvent(checkEvent(drawnCards));
                     requestDone = true;
                 }

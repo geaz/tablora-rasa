@@ -10,9 +10,12 @@ export enum QuestionResult {
     NoAnd = "No, and"
 }
 
-export enum ResultFlavour {
-    PositiveFlavour = "Positive Flavour",
-    NegativeFlavour = "Negative Flavour"
+export enum ResultCharacter {
+    ExtremelyPositive = "Extremely Positive",
+    Positive = "Positive",
+    Neutral = "Neutral",
+    Negative = "Negative",
+    ExtremelyNegative = "Extremely Negative"
 }
 
 export enum Event {
@@ -60,10 +63,13 @@ export const checkLikely = (cards: Array<Card>, likely: boolean) : QuestionResul
     throw("Unexpected Likely Check!");
 };
 
-export const checkFlavour = (cards: Array<Card>) : ResultFlavour => {
-    const [posCount, negCount] = countThreePositions(cards);
-    if(posCount > negCount) return ResultFlavour.PositiveFlavour;
-    else return ResultFlavour.NegativeFlavour;
+export const checkCharacter = (cards: Array<Card>) : ResultCharacter => {
+    const posCount = cards.filter(c => c.orientation === CardOrientation.Upright).length;
+    if(posCount === 4) return ResultCharacter.ExtremelyPositive;
+    if(posCount === 3) return ResultCharacter.Positive;
+    if(posCount === 2) return ResultCharacter.Neutral;
+    if(posCount === 1) return ResultCharacter.Negative;
+    else return ResultCharacter.ExtremelyNegative;
 };
 
 export const checkEvent = (cards: Array<Card>) : Event => {

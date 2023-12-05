@@ -1,23 +1,21 @@
 import styled from "styled-components";
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Home from "./pages/Home.mdx";
-import Rules from "./pages/Rules.mdx";
 
 function App() {
     return (
         <StyledApp>
             <a href="/" title="Home"><h1 className="title">Tablora Rasa</h1></a>
-            <h3 className="subtitle">A tableless, tarot based oracle for any TTRPG</h3>
+            <h3 className="subtitle">A table-less, tarot based TTRPG oracle</h3>
             <div id="link-row">
                 <ul>
-                    <li><a href="/rules" title="Rules">Rules</a></li>
-                    <li><a href="#" title="Download Cheat Sheets">Cheat Sheets</a></li>
+                    <li><a href="./Tablora Rasa.pdf" title="Rules" target="_blank">Rules</a></li>
+                    <li><a href="https://github.com/geaz/tablora-rasa" title="Github" target="_blank">Github</a></li>
                 </ul>
             </div>
             <BrowserRouter>
                 <Routes>
                     <Route index element={<Home />} />
-                    <Route path="rules" element={<Rules />} />
                 </Routes>
             </BrowserRouter>
         </StyledApp>
