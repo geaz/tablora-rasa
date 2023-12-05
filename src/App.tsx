@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Home from "./pages/Home.mdx";
 
 function App() {
@@ -13,11 +12,7 @@ function App() {
                     <li><a href="https://github.com/geaz/tablora-rasa" title="Github" target="_blank">Github</a></li>
                 </ul>
             </div>
-            <BrowserRouter>
-                <Routes>
-                    <Route index element={<Home />} />
-                </Routes>
-            </BrowserRouter>
+            <Home />
         </StyledApp>
     );
 }

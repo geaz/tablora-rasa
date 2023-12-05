@@ -11,10 +11,10 @@ export const CardComponent : FC<CardProps> = (props: CardProps) => {
         <StyledCard>
             { props.card === undefined && 
                 <img title="placeholder" 
-                    src={`/images/placeholder.png`}/> }
+                    src={`./images/placeholder.png`}/> }
             { props.card !== undefined  &&
                 <img title={props.card.info.name} 
-                    src={`/images/cards/${props.card.info.id}.png`} 
+                    src={`./images/cards/${props.card.info.id}.png`} 
                     className={ props.card.orientation === CardOrientation.Reversed ? "reversed-card" : ""}/> }
         </StyledCard>
     );
