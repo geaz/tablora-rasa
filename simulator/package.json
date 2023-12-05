@@ -1,0 +1,14 @@
+{
+    "name": "tablora-rasa-simulator",
+    "private": true,
+    "version": "0.0.0",
+    "type": "commonjs",
+    "scripts": {
+      "build": "npx tsc",
+      "simulate-trigger": "node -e \"require('./build/simulator/simulator.js').simulateEventTrigger(2)\" & node -e \"require('./build/simulator/simulator.js').simulateEventTrigger(3)\" & node -e \"require('./build/simulator/simulator.js').simulateEventTrigger(4)\"",
+      "simulate-events": "node -e \"require('./build/simulator/simulator.js').simulateEvents()\"",
+      "simulate-question": "node -e \"require('./build/simulator/simulator.js').simulateQuestion()\"",
+      "simulate-likely": "node -e \"require('./build/simulator/simulator.js').simulateQuestion(true)\""
+    }
+  }
+  
