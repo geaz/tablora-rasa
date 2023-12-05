@@ -4,9 +4,20 @@ import react from '@vitejs/plugin-react'
 import remarkGfm from 'remark-gfm'
 
 // https://vitejs.dev/config/
-export default defineConfig({
-    plugins: [
-        {enforce: 'pre', ...mdx({ remarkPlugins: [ remarkGfm ] })},
-        react()
-    ]
-})
+export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
+    if (command === 'build') {
+        return {
+            base: "/tablora-rasa/",
+            plugins: [
+                {enforce: 'pre', ...mdx({ remarkPlugins: [ remarkGfm ] })},
+                react()
+            ]
+        }
+    }
+    return {
+        plugins: [
+            {enforce: 'pre', ...mdx({ remarkPlugins: [ remarkGfm ] })},
+            react()
+        ]
+    }
+});
