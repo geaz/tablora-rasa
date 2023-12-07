@@ -1,6 +1,22 @@
-[![CC BY-NC 4.0](https://img.shields.io/github/license/geaz/tablora-rasa)](https://github.com/geaz/tablora-rasa/blob/main/LICENSE)   
 [![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/geaz84)
 
 # Tablora Rasa - A table-less, tarot based TTRPG oracle
 
-This repository contains the code for the tarot oracle website and the Affinity Publisher source files.
+Tablora Rasa is a table-less, tarot based and TTRPG system agnostic oracle. With enough creativity and the following rules, this oracle can answer any question that arises during an adventure in your TTRPG sessions.
+
+- yes/no questions (50/50, Likely, Unlikely)
+- open questions
+- generating random events
+- generating NPCs
+- generating Locations
+
+**Only limited by your imagination!**
+
+With a little practice, or for those who already know how to interpret tarot cards, the complete oracle works without tables! To get you started, this guide contains a cheat sheet and a small introduction to tarot cards.
+
+**The functionality of this oracle is strongly dependent on your own creativity and interpretation. It is, in no way, a predetermined narrative oracle.**
+
+But if you go for it, you will be rewarded with an oracle with endless possibilities for which no books with tables have to be rolled!
+
+Online Oracle: https://geaz.github.io/tablora-rasa/  
+Rules: https://geaz.github.io/tablora-rasa/Tablora%20Rasa.pdf
