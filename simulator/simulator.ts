@@ -1,6 +1,5 @@
 import { MinorArcana } from "../src/model/MinorArcana";
 import { Card, CardOrientation } from "../src/model/CardDeck";
-import { isCourt } from "../src/model/Arcana";
 import { QuestionResult, Event, checkEvent, checkLikely, checkYesNo } from "../src/QuestionChecker";
 
 let minorPile: Array<Card> = MinorArcana.map(c => { return {
@@ -57,15 +56,15 @@ export function simulateQuestion(likely: boolean) {
         }
     }
     
-    console.log(`Total Yes: ${yes} (${(yes/1000000).toFixed(2)}%)`);
-    console.log(`Total Yes, but: ${yesBut} (${(yesBut/1000000).toFixed(2)}%)`);
-    console.log(`Total Yes, and: ${yesAnd} (${(yesAnd/1000000).toFixed(2)}%)`);
-    console.log(`Total No, but: ${noBut} (${(noBut/1000000).toFixed(2)}%)`);
-    console.log(`Total No, and: ${noAnd} (${(noAnd/1000000).toFixed(2)}%)`);
-    console.log(`Total No: ${no} (${(no/1000000).toFixed(2)}%)`);
+    console.log(`Total Yes: ${yes} (${(yes/1000000).toFixed(2)})`);
+    console.log(`Total Yes, but: ${yesBut} (${(yesBut/1000000).toFixed(2)})`);
+    console.log(`Total Yes, and: ${yesAnd} (${(yesAnd/1000000).toFixed(2)})`);
+    console.log(`Total No, but: ${noBut} (${(noBut/1000000).toFixed(2)})`);
+    console.log(`Total No, and: ${noAnd} (${(noAnd/1000000).toFixed(2)})`);
+    console.log(`Total No: ${no} (${(no/1000000).toFixed(2)})`);
     console.log(``);
-    console.log(`All Yes Types: ${yes+yesBut+yesAnd} (${((yes+yesBut+yesAnd)/1000000).toFixed(2)}%)`);
-    console.log(`All No Types: ${no+noBut+noAnd} (${((no+noBut+noAnd)/1000000).toFixed(2)}%)`);
+    console.log(`All Yes Types: ${yes+yesBut+yesAnd} (${((yes+yesBut+yesAnd)/1000000).toFixed(2)})`);
+    console.log(`All No Types: ${no+noBut+noAnd} (${((no+noBut+noAnd)/1000000).toFixed(2)})`);
 }
 
 export function simulateEvents() {
@@ -100,10 +99,10 @@ export function simulateEvents() {
         }
     }
 
-    console.log(`Total triggered NPCs: ${triggeredNpcs} (${(triggeredNpcs/1000000).toFixed(2)}%)`);
-    console.log(`Total triggered Encounters: ${triggeredEncounters} (${(triggeredEncounters/1000000).toFixed(2)}%)`);
-    console.log(`Total triggered Locations: ${triggeredLocations} (${(triggeredLocations/1000000).toFixed(2)}%)`);
-    console.log(`Total triggered Notes: ${triggeredNotes} (${(triggeredNotes/1000000).toFixed(2)}%)`);
+    console.log(`Total triggered NPCs: ${triggeredNpcs} (${(triggeredNpcs/1000000).toFixed(2)})`);
+    console.log(`Total triggered Encounters: ${triggeredEncounters} (${(triggeredEncounters/1000000).toFixed(2)})`);
+    console.log(`Total triggered Locations: ${triggeredLocations} (${(triggeredLocations/1000000).toFixed(2)})`);
+    console.log(`Total triggered Notes: ${triggeredNotes} (${(triggeredNotes/1000000).toFixed(2)})`);
 }
 
 export function simulateEventTrigger(cardDraws: number) {

@@ -9,6 +9,9 @@
       "simulate-events": "node -e \"require('./build/simulator/simulator.js').simulateEvents()\"",
       "simulate-question": "node -e \"require('./build/simulator/simulator.js').simulateQuestion()\"",
       "simulate-likely": "node -e \"require('./build/simulator/simulator.js').simulateQuestion(true)\""
+    },
+    "devDependencies": {
+      "typescript": "^5.4.4"
     }
   }
   
