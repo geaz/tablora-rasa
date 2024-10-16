@@ -2,7 +2,7 @@
 
 # Tablora Rasa - A table-less, tarot based TTRPG oracle
 
-Tablora Rasa is a table-less, tarot based and TTRPG system agnostic oracle. With enough creativity and the following rules, this oracle can answer any question that arises during an adventure in your TTRPG sessions.
+Tablora Rasa is a table-less, tarot-based, and TTRPG system agnostic oracle. With enough creativity and the following rules, this oracle can answer any question during an adventure in your TTRPG sessions.
 
 - yes/no questions (50/50, Likely, Unlikely)
 - open questions
@@ -10,11 +10,11 @@ Tablora Rasa is a table-less, tarot based and TTRPG system agnostic oracle. With
 - generating NPCs
 - generating Locations
 
-**Only limited by your imagination!**
+**You’re only limited by your imagination!**
 
-With a little practice, or for those who already know how to interpret tarot cards, the complete oracle works without tables! To get you started, this guide contains a cheat sheet and a small introduction to tarot cards.
+With a little practice, or for those who already know how to interpret tarot cards, the complete oracle works without tables! To get you started, this guide contains a small introduction to tarot cards.
 
-**The functionality of this oracle is strongly dependent on your own creativity and interpretation. It is, in no way, a predetermined narrative oracle.**
+**The functionality of this oracle is strongly dependent on your creativity and interpretation. It is, in no way, a predetermined narrative oracle.**
 
 But if you go for it, you will be rewarded with an oracle with endless possibilities for which no books with tables have to be rolled!
 
