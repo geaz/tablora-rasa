@@ -1,19 +1,25 @@
 import { WorkspaceLeaf, Plugin, FileSystemAdapter } from 'obsidian';
 import { TabloraRasa, TABLORA_RASA_VIEW_TYPE } from './tablora-rasa';
 
+import { imageBlob, imageHash } from './images'
+
+import * as fs from 'fs'
+import * as path from 'path'
+
+const decompress = require('decompress')
+const decompressTargz = require('decompress-targz')
+
 export default class TabloraRasaPlugin extends Plugin {
 	async onload() {
-		const adapter = this.app.vault.adapter
-        if (! (adapter instanceof FileSystemAdapter))
-            throw new Error('This plugin requires a FileSystemAdapter for now')
-
-		const manifestPath = this.manifest.dir
-        if (manifestPath == null)
-            throw new Error('Could not determine manifest directory')
+		if (! (this.app.vault.adapter instanceof FileSystemAdapter))
+			throw new Error('This plugin requires a FileSystemAdapter for now');	
+		if (this.manifest.dir == null)
+			throw new Error('Could not determine manifest directory');
+		await checkUnpack(this.app.vault.adapter.getBasePath(), this.manifest.dir);
 
 		this.registerView(
 			TABLORA_RASA_VIEW_TYPE,
-			(leaf) => new TabloraRasa(leaf, manifestPath)
+			(leaf) => new TabloraRasa(leaf, this.manifest.dir!)
 		);
 
 		this.addCommand({
@@ -37,4 +43,26 @@ export default class TabloraRasaPlugin extends Plugin {
 		}
 		workspace.revealLeaf(leaf!);
 	}
+}
+
+async function checkUnpack(vaultPath: string, manifestPath: string) : Promise<void> {
+	let imagesUnpacked: boolean = false;
+	try {
+		// Extract resources if they are not already extracted
+		const checksumPath = path.join(vaultPath, manifestPath, 'images', 'CHECKSUM');
+		if(fs.existsSync(checksumPath)) {
+			const data = fs.readFileSync(checksumPath, 'utf8');
+			imagesUnpacked = data.trim() == imageHash;
+		}
+
+		if (!imagesUnpacked)
+			await extractTarGz(imageBlob, path.join(vaultPath, manifestPath))
+	} catch { 
+		throw new Error('Error during Tablora Rasa image unpack!');
+	}	
+}
+
+async function extractTarGz(base64TarGz: string, destinationPath: string) {
+    const tarGzBuffer = Buffer.from(base64TarGz, 'base64')
+    await decompress(tarGzBuffer, destinationPath, { plugins: [decompressTargz()] })
 }

@@ -39,8 +39,7 @@ const context = await esbuild.context({
 	sourcemap: prod ? false : "inline",
 	treeShaking: true,
 	outfile: "dist/main.js",
-	minify: prod,
-	plugins: [mdx()]
+	minify: prod
 });
 
 if (prod) {
