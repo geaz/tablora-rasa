@@ -4,6 +4,7 @@ import { Card, CardOrientation } from "../model/CardDeck";
 
 interface CardProps  {
     card: Card | undefined
+    imageUrlFn?: (image: string) => string | undefined
 }
 
 export const CardComponent : FC<CardProps> = (props: CardProps) => {
@@ -11,10 +12,10 @@ export const CardComponent : FC<CardProps> = (props: CardProps) => {
         <StyledCard>
             { props.card === undefined && 
                 <img title="placeholder" 
-                    src={`./images/placeholder.png`}/> }
+                    src={ props.imageUrlFn ? props.imageUrlFn('placeholder.png') : `./images/placeholder.png`}/> }
             { props.card !== undefined  &&
                 <img title={props.card.info.name} 
-                    src={`./images/cards/${props.card.info.id}.png`} 
+                    src={ props.imageUrlFn ? props.imageUrlFn(`cards/${props.card.info.id}.png`) : `./images/cards/${props.card.info.id}.png`} 
                     className={ props.card.orientation === CardOrientation.Reversed ? "reversed-card" : ""}/> }
         </StyledCard>
     );

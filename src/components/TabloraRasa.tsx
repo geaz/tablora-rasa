@@ -17,7 +17,11 @@ enum QuestionType {
     Event
 }
 
-export const TabloraRasa: FC = () => {
+interface TabloraRasaProps  {
+    imageUrlFn?: (image: string) => string | undefined
+}
+
+export const TabloraRasa: FC<TabloraRasaProps> = (props: TabloraRasaProps) => {
     const [remaining, shuffleMinor, drawMinor, discardMinors] = useCardDeck(MinorArcana);
     const [ _, shuffleMajor, drawMajor] = useCardDeck(MajorArcana);
     const [drawnCards, setDrawnCards] = useState<Array<Card>>([]);
@@ -118,15 +122,17 @@ export const TabloraRasa: FC = () => {
             <div id="card-table">
                 <div className="card-place">
                     <div className="main-cards">
-                        <CardComponent card={drawnCards[0]}/>
-                        <CardComponent card={drawnCards[1]}/>
+                        <CardComponent card={drawnCards[0]} imageUrlFn={props.imageUrlFn}/>
+                        <CardComponent card={drawnCards[1]} imageUrlFn={props.imageUrlFn}/>
                         <CardComponent card={ lastRequestType === QuestionType.LikelyYes || lastRequestType === QuestionType.UnlikelyYes 
                             ? undefined
-                            : drawnCards[2] }/>
+                            : drawnCards[2] }
+                            imageUrlFn={props.imageUrlFn}/>
                     </div>
                     <CardComponent card={ lastRequestType === QuestionType.LikelyYes || lastRequestType === QuestionType.UnlikelyYes 
                         ? drawnCards[2]
-                        : drawnCards[3] }/>
+                        : drawnCards[3] }
+                        imageUrlFn={props.imageUrlFn}/>
                 </div>
                 <div className="deck-infos">
                     <span className="primary-info">Minor Arcanas remaining: {remaining}</span>
@@ -167,6 +173,7 @@ const StyledTabloraRasa = styled.div`
             border: 1px solid ${ p => p.theme.borderColor };
             border-radius: 3px;
             cursor: pointer;
+            color: black;
 
             svg { margin-right: 5px; }
 
