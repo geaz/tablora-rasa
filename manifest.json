@@ -1,0 +1,10 @@
+{
+	"id": "tablora-rasa",
+	"name": "Tablora Rasa",
+	"version": "1.0.0",
+	"minAppVersion": "0.15.0",
+	"description": "Use the Tablora Rasa Oracle within Obsidian.",
+	"author": "Geaz",
+	"authorUrl": "https://github.com/geaz/tablora-rasa",
+	"isDesktopOnly": false
+}
