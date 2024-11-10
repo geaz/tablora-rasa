@@ -1,4 +1,4 @@
-[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/geaz84)
+<a href="https://geaz.itch.io/tablora-rasa" title="itchio"><img src="https://raw.githubusercontent.com/itchio/itch.io/refs/heads/master/logos/badge-color.svg" alt="itchio" width="150"/></a>
 
 # Tablora Rasa - A table-less, tarot based TTRPG oracle
 
